@@ -6,5 +6,4 @@ export const userRouter = (app: Elysia) =>
     app.use(userController)
   )
 
-
 export default userRouter

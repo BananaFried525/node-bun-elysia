@@ -1,3 +1,3 @@
-import dayjs from 'dayjs';
+import _dayjs from 'dayjs';
 
-export default dayjs
+export const dayjs = _dayjs

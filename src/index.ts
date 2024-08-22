@@ -1,9 +1,10 @@
-import { Elysia,} from "elysia";
+import { Elysia, } from "elysia";
 import { swagger } from "@elysiajs/swagger";
-import { userRouter } from "./routers/user";
+import { userRouter, authRouter } from "./routers";
 import { cors } from "@elysiajs/cors";
+import { jwt } from '@elysiajs/jwt';
 
-const app = new Elysia({prefix: "/api/v1"})
+const app = new Elysia({ prefix: "/api/v1" })
   .use(cors())
   .use(
     swagger({
@@ -22,6 +23,7 @@ const app = new Elysia({prefix: "/api/v1"})
       },
     })
   )
+  .use(authRouter)
   .use(userRouter)
   .listen(process.env.SERVICE_PORT || 3000);
 

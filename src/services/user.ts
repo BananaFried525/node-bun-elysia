@@ -1,6 +1,5 @@
 import { InternalServerError } from 'elysia'
 import * as types from './type'
-import db from '../db'
 import * as utils from '../utils'
 
 export const getUser = async ({ reference }: types.getUserParams): Promise<types.getUserResult> => {
